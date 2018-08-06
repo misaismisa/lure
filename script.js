@@ -21,7 +21,8 @@ $(document).ready(function(){
         slidesToShow: 2,
         slidesToScroll: 2,
         infinite: true,
-        dots: true
+        dots: true,
+        arrows: false
       }
     },
     {
