@@ -33,7 +33,7 @@
         <h1>Beauty Just Minutes Away</h1>
         <form role="search">
           <input class="service" type="text" id="searchsite" name="search" placeholder="Hair Salons, Gel Manicures, 90 min massage...">
-          <input type="text" id="searchsite" name="search" placeholder="Los Angeles, CA">
+          <input class="location" type="text" id="searchsite" name="search" placeholder="Los Angeles, CA">
           <button type="submit"><i class="fa fa-search"></i></button>
         </form>
       </main>
@@ -79,18 +79,27 @@
               </div>
               <span>2.8mi</span>
             </div></a>
-
+            <br>
             <!-- Next and previous buttons -->
-            <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
+            <!-- <div class="arrows">
+              <span class="prev">&#10094;</span>
+              <span class="next">&#10095;</span>
+            </div> -->
+            <!-- <div style="text-align:center">
+              <span class="dot" onclick="currentSlide(1)"></span>
+              <span class="dot" onclick="currentSlide(2)"></span>
+              <span class="dot" onclick="currentSlide(3)"></span>
+              <span class="dot" onclick="currentSlide(4)"></span>
+            </div> -->
           </div>
 
           <!-- The dots/circles -->
-          <!-- <div style="text-align:center">
+          <div style="text-align:center">
             <span class="dot" onclick="currentSlide(1)"></span>
             <span class="dot" onclick="currentSlide(2)"></span>
             <span class="dot" onclick="currentSlide(3)"></span>
-          </div> -->
+            <span class="dot" onclick="currentSlide(4)"></span>
+          </div>
     </section>
 
     <section class="categories-container">
@@ -136,7 +145,6 @@
 
     <footer>
       <div class="footermain">
-        <div class="footerleft">
           <div class="about">
             <h3>ABOUT</h3>
             <a href="#about">About Lure</a>
@@ -152,7 +160,6 @@
             <a href="#support">Support</a>
             <a href="#developers">Developers</a>
           </div>
-        </div>
         <div class="social">
           <h3>CONNECT</h3>
           <div class="icons">
@@ -166,7 +173,7 @@
         </div>
       </div>
       <div class="copyright">
-        <span>&copy; copyright Lure</span>
+        <span>&copy; copyright Lure Co.</span>
       </div>
     </footer>
 
@@ -180,6 +187,22 @@
             x.className = "topnav";
         }
     }
+
+    function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
     </script>
   </body>
 </html>
